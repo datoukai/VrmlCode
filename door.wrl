@@ -1,0 +1,201 @@
+#VRML V2.0 utf8
+
+				 #VRML V2.0 utf8
+
+#door frameup
+Transform
+{
+	translation	0.0 8.0 16.25
+	children
+    [
+		Shape
+		{
+			appearance Appearance
+			{
+				material Material
+				{
+
+				}
+			}
+			geometry Box
+			{
+				size 33.0 0.2 0.5
+			}
+		}
+	]
+}
+
+#door framebottom
+Transform
+{
+	translation	0.0 -8.0 16.25
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+				material Material
+				{
+				}
+			}
+			geometry Box
+			{
+				size 33.0 0.3 0.5
+			}
+		}
+	]
+}
+
+#door frame1
+Transform
+{
+	translation	-16.25 0.0 16.25
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+				material Material
+				{
+
+				}
+			}
+			geometry Box
+			{
+				size 0.5 16.2 0.5
+			}
+		}
+	]
+}
+
+#door framer
+Transform
+{
+	translation	16.25 0.0 16.25
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+				material Material
+				{}
+			}
+			geometry Box
+			{
+				size 0.5 16.2 0.5
+			}
+		}
+	]
+}
+
+Group
+{
+	children
+	[
+		DEF	sensorp ProximitySensor
+		{
+			center 0.0 0.0 16.25
+			size 33.0 16.0 55.0
+		}
+		DEF	drl1 Transform
+		{
+			translation	4.0 0.0 16.25
+			children
+			[
+				DEF	door1 Shape
+				{
+					appearance Appearance
+					{
+						material Material
+						{
+							diffuseColor 0.05 0.46 0.73
+							specularColor 1.0 1.0 1.0
+							emissiveColor 0.03 0.04 0.02
+							ambientIntensity 0.0
+							shininess 0.31
+							transparency 0.29
+						}
+					}
+					geometry Box
+					{
+						size 7.9 16.1 0.2
+					}
+				}
+			]
+		}
+		DEF	drl2 Transform
+		{
+			translation	-4.0 0.0 16.25
+			children USE door1
+		}
+	]
+}
+
+Transform
+{
+	translation	12.0 0.0 16.25
+	children
+	[
+		DEF	door2 Shape
+		{
+			appearance Appearance
+			{
+				material Material
+				{
+					diffuseColor 0.3 0.0 0.3
+					specularColor 0.96 1.0 0.0
+					ambientIntensity 0.0
+					emissiveColor 0.21 0.0 0.14
+					shininess 0.18
+					transparency 0.22
+				}
+			}
+			geometry Box
+			{
+				size 7.9 16.1 0.2
+			}
+		}
+	]
+}
+
+Transform
+{
+	translation	-12.0 0.0 16.25
+	children USE door2
+}
+
+DEF	clockd TimeSensor
+{
+	cycleInterval 30
+}
+
+DEF	interd1 PositionInterpolator
+{
+	key	[0.0 0.5 1.0]
+	keyValue
+	[
+		4.0 0.0 16.25
+		12.0 0.0 16.25
+		4.0 0.0 16.25
+	]
+}
+
+DEF	interd2	PositionInterpolator
+{
+	key	[0.0 0.5 1.0]
+	keyValue
+	[
+		-4.0 0.0 16.25
+		-12.0 0.0 16.25
+		-4.0 0.0 16.25
+	]
+}
+
+ROUTE sensorp.enterTime TO clockd.startTime
+ROUTE clockd.fraction_changed TO interd1.set_fraction
+ROUTE interd1.value_changed	TO drl1.translation
+ROUTE clockd.fraction_changed TO interd2.set_fraction
+ROUTE interd2.value_changed	TO drl2.translation

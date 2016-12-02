@@ -1,0 +1,293 @@
+#VRML V2.0 utf8
+
+DEF dormitory Group {	#No4 dormitory
+	children [
+
+  Inline
+{
+	url	"background.wrl"
+}
+
+
+
+#  Inline
+#{
+#	url	"sun.wrl"
+#}
+
+
+
+
+  Inline
+{
+	url	"tree.wrl"
+}
+
+
+
+  Inline
+{
+	url	"house.wrl"
+}
+
+
+
+
+  Inline
+{
+	url	"clock.wrl"
+}
+
+
+
+
+ Inline
+{
+	url	"desk.wrl"
+}
+
+
+
+
+ Inline
+{
+	url	"computer.wrl"
+}
+
+
+
+ Inline
+{
+	url	"chair.wrl"
+}
+
+
+
+
+ Inline
+{
+	url	"door.wrl"
+}
+
+
+
+
+
+ Inline
+{
+	url	"ditan.wrl"
+}
+
+Inline
+{
+	url	"light.wrl"
+}
+
+]
+}
+
+
+
+Transform {	  #No3 dormitory
+	translation	0 0 -150
+	children [
+		USE	dormitory
+	]
+}
+
+Transform {	  #No2 dormitory
+	translation	-800 0 0
+	children [
+		USE	dormitory
+	]
+}
+
+Transform {	  #No1 dormitory
+	translation	-800 0 -150
+	children [
+		USE	dormitory
+	]
+}
+
+
+
+
+Group {
+	children [
+
+		DEF	view1 Viewpoint	{
+			position -595 550 1100
+			orientation	1 0 0 -0.6
+			description	"overlook"
+		}
+
+		DEF	view2 Viewpoint	{
+			position -195 150 400
+			orientation	1 0 0 -0.3
+			description	"no4overlook"
+		}
+
+		DEF	view3 Viewpoint	{
+			position -420 30 160
+			orientation	0 1 0 -0.6
+			description	"no4leftview"
+		}
+
+		DEF	view4 Viewpoint	{
+			position -195 20 300
+#			orientation	0 0 0 0
+			description	"no4frontview"
+		}
+
+		DEF	view5 Viewpoint	{
+			position 70 30 160
+			orientation	0 1 0 0.7
+			description	"no4rightview"
+		}
+
+		DEF	view6 Viewpoint	{
+			position 0 0 60
+#			orientation	0 0 0 0
+			description	"no4door"
+		}
+
+		DEF	view7 Viewpoint	{
+			position 0 0 60
+			orientation	1 0 0 0.2
+			description	"no4doorlookup"
+		}
+
+		DEF	view8 Viewpoint	{
+			position 0 0 30
+#			orientation	0 0 0 0
+			description	"no4inthedoor"
+		}
+
+		DEF	view9 Viewpoint	{
+			position -195 250 130
+			orientation	1 0 0 -0.6
+			description	"no3overlook"
+		}
+
+		DEF	view10 Viewpoint	{
+			position -520 30 10
+			orientation	0 1 0 -0.8
+			description	"no3leftview"
+		}
+
+		DEF	view11 Viewpoint	{
+			position -195 40 -1
+#			orientation	0 0 0 0
+			description	"no3frontview"
+		}
+
+		DEF	view12 Viewpoint	{
+			position 70 30 10
+			orientation	0 1 0 0.7
+			description	"no3rightview"
+		}
+
+		DEF	view13 Viewpoint	{
+			position 0 0 -90
+#			orientation	0 0 0 0
+			description	"no3door"
+		}
+
+		DEF	view14 Viewpoint	{
+			position 0 0 -90
+			orientation	1 0 0 0.2
+			description	"no3doorlookup"
+		}
+
+		DEF	view15 Viewpoint	{
+			position 0 0 -120
+#			orientation	0 0 0 0
+			description	"no3inthedoor"
+		}
+
+		DEF	view16 Viewpoint	{
+			position -995 250 130
+			orientation	1 0 0 -0.6
+			description	"no1overlook"
+		}
+
+		DEF	view17 Viewpoint	{
+			position -1320 30 10
+			orientation	0 1 0 -0.8
+			description	"no1leftview"
+		}
+
+		DEF	view18 Viewpoint	{
+			position -995 40 -1
+#			orientation	0 0 0 0
+			description	"no1frontview"
+		}
+
+		DEF	view19 Viewpoint	{
+			position -730 30 10
+			orientation	0 1 0 0.7
+			description	"no1rightview"
+		}
+
+		DEF	view20 Viewpoint	{
+			position -800 0 -90
+#			orientation	0 0 0 0
+			description	"no1door"
+		}
+
+		DEF	view21 Viewpoint	{
+			position -800 0 -90
+			orientation	1 0 0 0.2
+			description	"no1doorlookup"
+		}
+
+		DEF	view22 Viewpoint	{
+			position -800 0 -120
+#			orientation	0 0 0 0
+			description	"no1inthedoor"
+		}
+
+		DEF	view23 Viewpoint	{
+			position -995 150 400
+			orientation	1 0 0 -0.3
+			description	"no2overlook"
+		}
+
+		DEF	view24 Viewpoint	{
+			position -1220 30 160
+			orientation	0 1 0 -0.6
+			description	"no2leftview"
+		}
+
+		DEF	view25 Viewpoint	{
+			position -995 20 300
+#			orientation	0 0 0 0
+			description	"no2frontview"
+		}
+
+		DEF	view26 Viewpoint	{
+			position -730 30 160
+			orientation	0 1 0 0.7
+			description	"no2rightview"
+		}
+
+		DEF	view27 Viewpoint	{
+			position -800 0 60
+#			orientation	0 0 0 0
+			description	"no2door"
+		}
+
+		DEF	view28 Viewpoint	{
+			position -800 0 60
+			orientation	1 0 0 0.2
+			description	"no2doorlookup"
+		}
+
+		DEF	view29 Viewpoint	{
+			position -800 0 30
+#			orientation	0 0 0 0
+			description	"no2inthedoor"
+		}
+
+	]
+}

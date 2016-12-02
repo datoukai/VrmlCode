@@ -1,0 +1,85 @@
+#VRML V2.0 utf8
+
+			 #VRML V2.0 utf8
+Transform {
+	translation	0 -1 0
+	children [
+
+
+Group{
+   		 
+
+   children[
+      SpotLight{
+           location 6.0 0.0 0.0
+	   color 1.0 1.0 1.0
+
+      }
+      
+     #四条腿及。。
+     Transform{
+        translation -9.3 -6 4.5
+	children[
+	DEF SH Shape{
+	   appearance DEF Color Appearance{
+	       material Material{
+	            diffuseColor 0.0 0.8 1.0
+	       }
+	       texture ImageTexture{
+	          url "violin003.jpg"
+		  repeatS TRUE
+		  repeatT FALSE
+	       }
+	   }
+	   geometry Cylinder {
+	       side TRUE 
+          bottom TRUE 
+          height 2.1
+          radius 0.10
+          top TRUE 
+	    }
+	}
+	]
+     }
+     Transform{
+         translation -10.5 -6 4.5
+	 children[
+	 USE SH
+	 ]
+     }
+     Transform{
+         translation -10.5 -6 6.3
+	 children[
+	 USE SH
+	 ]
+     }
+     Transform{
+         translation -9.3 -6 6.3
+	 children[
+	 USE SH
+	 ]
+     }
+
+
+	 
+    
+     #座子
+     Transform{
+         translation -10 -5 5.4
+	 children[
+	 Shape{
+	    appearance USE Color
+	    geometry Cylinder {
+	       side TRUE 
+          bottom TRUE 
+          height 0.10
+          radius 1.2
+          top TRUE 
+	    }
+	  }
+	 ]
+     }
+   ]
+}
+]
+}

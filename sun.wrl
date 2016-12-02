@@ -1,0 +1,32 @@
+#VRML V2.0 utf8
+
+#创建金球造型
+   
+
+Transform {
+	translation	-450.0 100.0 12.0
+	children [
+
+
+
+	Shape{
+
+
+                    	 #黄金颜色
+            	   appearance Appearance{
+            	   material Material{         #空间物体造型外观
+            	   diffuseColor 1.0 0.6 0.0      #一种材料的漫反射颜色
+            	   ambientIntensity 0.4           #多少环境光被盖表面反射
+            	   specularColor 0.7 0.7 0.6     #物体镜面反射光线的颜色
+            	   shininess 0.20                #造型外观材料的亮度
+            	   } 
+    	}
+	   geometry Sphere{                       #球体
+            	radius 1.0
+            	 }
+    	   }
+	
+   ]
+}
+	  
+	   

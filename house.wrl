@@ -1,0 +1,994 @@
+#VRML V2.0 utf8
+
+#front wall
+
+Transform
+{
+	translation	0.0 0.0 -16.05
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+				texture	ImageTexture
+				{
+					url	"fangjian.jpg"
+				}
+			}
+			geometry Box
+			{
+				size 33.0 16.0 0.1
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
+#front wall2
+Transform
+{
+	translation	0.0 0.0 -16.15
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+				material Material
+				{}
+			}
+			geometry Box
+			{
+				size 33.0 16.0 0.1
+			}
+		}
+	]
+}
+
+
+
+
+
+Transform
+{
+	translation	0.0 0.0 -16.20
+	children
+	[
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  33.3  16.0 0.30
+			}
+		}
+	]
+}
+
+
+
+
+
+
+#left wall
+Group
+{
+	children
+	[
+		Transform
+		{
+			translation	-16.25 0.0 0.0
+			children
+			[
+				#horizontal wall1
+				Transform
+				{
+					translation	0.0 7.0 0.0
+					children
+					[
+						Shape
+						{
+							appearance DEF wa Appearance
+							{
+								material Material
+								{
+									emissiveColor 1.0 0.6 0.6
+								}
+							}
+							geometry Box
+							{
+								size 0.5 2.0 32.0
+							}
+						}
+						
+
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 -0.1 7.0 0.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 2.0 32.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+				#horizontal wall2
+				Transform
+				{
+					translation	0.0 -5.0 0.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry Box
+							{
+								size 0.5 6.0 32.0
+							}
+						}
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 -0.3 -5.0 0.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.2 6.0 32.0
+			}
+		}
+
+
+
+
+
+
+					]
+				}
+				#vertical wall1
+				Transform
+				{
+					translation	0.0 2.0 -15.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry DEF vw Box
+							{
+								size 0.5 8.0 2.0
+							}
+						}
+					]
+				}
+
+
+
+
+		Transform
+		{
+			translation	 -0.1 2.0 -15.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 8.0 2.0
+			}
+		}
+	]
+}
+
+
+
+
+				#vertical wall2
+				Transform
+				{
+					translation	0.0 2.0 0.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry USE vw
+						}
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 -0.1 2.0 0.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 8.0 2.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+				#vertical wall3
+				Transform
+				{
+					translation	0.0 2.0 15.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry USE vw
+						}
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 -0.1 2.0 15.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 8.0 2.0
+			}
+		}
+	]
+}
+
+
+
+
+				#window1
+				DEF	w1 Group
+				{
+					children
+					[
+						#H frame1
+						Transform
+						{
+							translation	0.0 5.9 -7.5
+							children
+							[
+								DEF	ws Shape
+								{
+									appearance DEF fa Appearance
+									{
+										material Material
+										{
+											diffuseColor 1.0 1.0 0.0
+											ambientIntensity 0.75
+											emissiveColor 0.1 0.1 0.1
+										}
+									}
+									geometry Box
+									{
+										size 0.4 0.2 13.0
+									}
+								}
+							]
+						}
+						#H frame2
+						Transform
+						{
+							translation	0.0 3.9 -7.5
+							children USE ws
+						}
+						#H frame3
+						Transform
+						{
+							translation	0.0 -1.9 -7.5
+							children USE ws
+						}
+						#V frame1
+						Transform
+						{
+							translation	0.0 2.0 -13.9
+							children
+							[
+								DEF	vf1 Shape
+								{
+									appearance USE fa
+									geometry Box
+									{
+										size 0.4 8.0 0.2
+									}
+								}
+							]
+						}
+						#V frame2
+						Transform
+						{
+							translation	0.0 1.0 -10.0
+							children
+							[
+								DEF	vf2	Shape
+								{
+									appearance USE fa
+									geometry Box
+									{
+										size 0.4 6.0 0.2
+									}
+								}
+							]
+						}
+						#V frame3
+						Transform
+						{
+							translation	0.0 5.0 -7.5
+							children
+							[
+								DEF	vf3	Shape
+								{
+									appearance USE fa
+									geometry Box
+									{
+										size 0.4 2.0 0.2
+									}
+								}
+							]
+						}
+						#V frame4
+						Transform
+						{
+							translation	0.0 1.0 -5.0
+							children
+							[
+								DEF	vf4	Shape
+								{
+									appearance USE fa
+									geometry Box
+									{
+										size 0.4 6.0 0.2
+									}
+								}
+							]
+						}
+						#V frame5
+						Transform
+						{
+							translation 0.0 2.0 -1.1
+							children
+							[
+								DEF	vf5	Shape
+								{
+									appearance USE fa
+									geometry Box
+									{
+										size 0.4 8.0 0.2
+									}
+								}
+							]
+						}
+					]
+				}
+				#window2
+				DEF	w2 Group
+				{
+					children
+					[
+						#H frame1
+						Transform
+						{
+							translation	0.0 5.9 7.5
+							children USE ws
+						}
+						#H frame2
+						Transform
+						{
+							translation	0.0 3.9 7.5
+							children USE ws
+						}
+						#H frame3
+						Transform
+						{
+							translation	0.0 -1.9 7.5
+							children USE ws
+						}
+						#V frame1
+						Transform
+						{
+							translation	0.0 2.0 1.1
+							children USE vf1
+						}
+						#V frame2
+						Transform
+						{
+							translation	0.0 1.0 5.0
+							children USE vf2
+						}
+						#V frame3
+						Transform
+						{
+							translation	0.0 5.0 7.5
+							children USE vf3
+						}
+					    #V frame4
+						Transform
+						{
+							translation	0.0 1.0 10.0
+							children USE vf4
+						}
+						#V frame5
+						Transform
+						{
+							translation	0.0 2.0 13.9
+							children USE vf5
+						}
+					]
+				}
+			]
+		}
+	]
+}
+#right wall
+Group
+{
+	children
+	[
+		Transform
+		{
+			translation	16.25 0.0 0.0
+			children
+			[
+				#horizontal wall1
+				Transform
+				{
+					translation	0.0 7.0 0.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry Box
+							{
+								size 0.5 2.0 32.0
+							}
+						}
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 0.1 7.0 0.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 2.0 32.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
+				#horizontal wall2
+				Transform
+				{
+					translation	0.0 -5.0 0.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry Box
+							{
+								size 0.5 6.0 32.0
+							}
+						}
+					]
+				}
+
+
+
+
+		Transform
+		{
+			translation	 0.1 -5.0 0.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 6.0 32.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+				#Vertical wall1
+				Transform
+				{
+					translation	0.0 2.0 -15.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry USE vw
+						}
+					]
+				}
+
+
+
+
+		Transform
+		{
+			translation	 0.1 2.0 -15.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 8.0 2.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+				#vertical wall2
+				Transform
+				{
+					translation	0.0 2.0 0.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry USE vw
+						}
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 0.1 2.0 0.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 8.0 2.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+				#vertical wall3
+				Transform
+				{
+					translation	0.0 2.0 15.0
+					children
+					[
+						Shape
+						{
+							appearance USE wa
+							geometry USE vw
+						}
+					]
+				}
+
+
+
+		Transform
+		{
+			translation	 0.1 2.0 15.0
+			children
+			[
+
+		Shape
+		{
+			appearance  Appearance
+			{
+				material Material {
+					diffuseColor 0.988 0.949 0.667
+				}
+			}
+			
+			geometry  Box
+			{
+				size  0.5 8.0 2.0
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+				#window1
+				USE	w1
+				#window2
+				USE	w2
+			]
+		}
+	]
+}
+
+#ceiling
+Transform
+{
+	translation	0.0 8.05 0.0
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+			
+			    texture ImageTexture
+				{
+					url	"ceiling2.jpg"
+				}
+				
+			}
+			geometry Box
+			{
+				size 33.0 0.1 32.4
+			}
+		}
+
+
+  #######################################################
+		Transform {	 # floor 2-6 right
+			translation	 0 40.55 0
+			children [
+				Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url	"RightWall.jpg"
+						}
+					}
+
+					geometry Box {
+						size 33 81 32.3
+					}
+				}
+
+				Transform {	   # floor 1-6 left
+					translation	-214.5 -8.2 0
+					children [
+						Shape {
+							appearance Appearance {
+								texture	ImageTexture {
+									url	"FrontWall.jpg"
+								}
+							}
+
+							geometry Box {
+								size 396 97.2 32.3
+							}
+						}
+					
+						Transform	{	# left wall
+							translation	 -198.05 0 0
+							children [
+								Shape {
+									appearance Appearance {
+										texture	ImageTexture {
+											url	"LeftWall.jpg"
+										}
+									}
+
+									geometry Box {
+										size 0.1 97.2 32.3
+									}
+								}
+
+								Transform {	 # the subgrade
+									translation	214.55 -51.6 0
+									children [
+										DEF subgrade Shape {
+											appearance Appearance {
+												material Material {
+													diffuseColor 0.988 0.949 0.667
+												}
+											}
+
+											geometry Box {
+												size 429 6 32.3
+											}
+										}
+
+										Transform {
+											translation	0 103.2 0
+											children [
+												USE	subgrade
+											]
+										}
+
+										Transform {	  # two step stone
+											translation	184.5 0 19.15
+											children [	 
+												Shape {
+													appearance Appearance {
+														material Material {
+															diffuseColor 0.988 0.949 1
+														}
+													}
+
+													geometry Box {
+														size 6 6 6
+													}
+												}
+												Transform	{
+													translation	27 0 0
+													children [
+														Shape {
+															appearance Appearance {
+																material Material {
+																	diffuseColor 0.988 0.949 1
+																}
+															}
+
+															geometry Box {
+																size 6 6 6
+															}
+														}
+													]
+												}
+											]
+										}
+
+										Transform {	  # three steps
+											translation	198 0 17.15
+											children [	 
+												Shape {
+													appearance Appearance {
+														material Material {
+															diffuseColor 0.988 0.949 0.667
+														}
+													}
+
+													geometry Box {
+														size 21 6 2
+													}
+												}
+												Transform	{
+													translation	0 -1 2
+													children [
+														Shape {
+															appearance Appearance {
+																material Material {
+																	diffuseColor 0.988 0.949 0.667
+																}
+															}
+
+															geometry Box {
+																size 21 4 2
+															}
+														}
+														Transform	{
+															translation	0 -1 2
+															children [
+																Shape {
+																	appearance Appearance {
+																		material Material {
+																			diffuseColor 0.988 0.949 0.667
+																		}
+																	}
+
+																	geometry Box {
+																		size 21 2 2
+																	}
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+
+
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+
+  #######################################################
+
+	]
+}
+
+
+
+
+
+
+
+
+
+#floor
+Transform
+{
+	translation	0.0 -8.05 0.0
+	children
+	[
+		Shape
+		{
+			appearance Appearance
+			{
+			    texture ImageTexture
+				{
+					url	"floor4.jpg"
+				}
+				textureTransform TextureTransform
+				{
+					scale 5 5
+				}
+			}
+			geometry Box
+			{
+				size 33 0.1 32.4
+			}
+		}
+	]
+}

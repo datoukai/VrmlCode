@@ -1,0 +1,176 @@
+#VRML V2.0 utf8
+
+##钟面
+Transform	{
+
+
+	translation	8.0 3.0 -15.95
+	rotation 1 0 0 1.571
+	children [
+Shape {
+	appearance Appearance {texture ImageTexture{url "clock.jpg"} 
+		
+		 }
+geometry	Cylinder {
+	side TRUE 
+bottom TRUE 
+ height 0.10
+radius 2.5
+top TRUE 
+}}
+##中心
+
+
+
+ Shape {
+	 
+	
+	appearance	Appearance {material Material {diffuseColor 0.5 0.3 0
+	ambientIntensity 0.4 
+specularColor 0.7 0.7 0.6
+shininess 0.2}}
+	geometry	Cone {
+	bottom TRUE
+	bottomRadius 0.5
+	height 0.7
+}}
+
+
+]}
+
+
+##########
+#按钮
+ Transform {translation 8.0 5.5 -15.95
+	children [
+	#传感器
+		DEF touch TouchSensor {}
+    Shape {appearance Appearance {material Material {diffuseColor 0.5 0.3 0
+	ambientIntensity 0.4 
+   specularColor 0.7 0.7 0.6
+      shininess 0.2}}
+
+	geometry Cylinder {radius 0.05
+        height 0.5}}
+
+
+  Transform {translation 0 0.5 0
+	children [Shape {
+		appearance Appearance {material Material {diffuseColor 0.5 0.3 0
+	ambientIntensity 0.4 
+ specularColor 0.7 0.7 0.6
+ shininess 0.2}}
+ 		geometry Cylinder {height 0.5
+	radius 0.4}}]
+}
+]
+}
+ ###############
+
+
+
+
+#时针
+
+DEF	h Transform	{
+translation	8.0 3.75 -15.85
+center 0 -0.75 0
+	children [
+		Shape {
+			appearance Appearance {material Material {diffuseColor 1 0 1 }}
+			geometry Box {
+				size 0.175 1.25 0.02
+		
+			}
+		}
+	]
+}
+#分针
+DEF	m Transform	{
+translation	8.0 3.925 -15.80
+center 0 -0.925 0
+	children [
+		Shape {
+			appearance Appearance {material Material {diffuseColor 0 1 1 }}
+			geometry Box {
+				size 0.15 1.6 0.02
+		
+			}
+		}
+	]
+}
+#秒
+DEF	s Transform	{
+translation	8.0 4.075 -15.75	  #旋转中心
+center 0 -1.075 0
+	children [
+		Shape {
+			appearance Appearance {material Material {diffuseColor 0 1 0 }}
+			geometry Cylinder {
+				radius 0.025
+				height 1.9
+			}
+		}
+	]
+}
+
+
+
+
+DEF	clock1 TimeSensor {
+	cycleInterval 216000
+
+enabled	TRUE
+ }
+DEF	clock2 TimeSensor {
+	cycleInterval 3600
+
+enabled	TRUE
+}
+
+DEF	clock3 TimeSensor {
+	cycleInterval 60
+ 
+enabled	TRUE
+}
+
+
+DEF	inter1 OrientationInterpolator {
+	key [0 0.25 0.5 0.75 1]
+	keyValue [0 0 1 0
+	0 0 1 -1.571
+0 0 1 -3.14
+0 0 1 1.571
+0 0 1 0
+]}
+DEF	inter2 OrientationInterpolator {
+	key [0 0.25 0.5 0.75 1]
+	keyValue [0 0 1 0
+	0 0 1 -1.571
+0 0 1 -3.14
+0 0 1 1.571
+0 0 1 0
+]}
+
+DEF	inter3 OrientationInterpolator {
+	key [0 0.25 0.5 0.75 1]
+	keyValue [0 0 1 0
+	0 0 1 -1.571
+0 0 1 -3.14
+0 0 1 1.571
+0 0 1 0
+]}
+
+ROUTE touch.touchTime TO clock1.startTime
+ROUTE clock1.fraction_changed TO	inter1.set_fraction
+ROUTE inter1.value_changed TO h.rotation
+
+
+ ROUTE touch.touchTime TO clock2.startTime
+	ROUTE clock2.fraction_changed TO	inter2.set_fraction
+ROUTE inter2.value_changed TO m.rotation
+
+
+ ROUTE touch.touchTime TO clock3.startTime
+ ROUTE clock3.fraction_changed TO	inter3.set_fraction
+ROUTE inter3.value_changed TO s.rotation

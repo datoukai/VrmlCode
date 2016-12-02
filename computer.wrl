@@ -1,0 +1,160 @@
+#VRML V2.0 utf8
+
+#notepad computer
+DEF	pc Transform
+{
+	translation	1 0 1
+	children
+	[
+		DEF	rlcd Transform
+		{
+			rotation 1 0 0 1.571
+			center 0.0 -2.7 -1.1
+			children
+			[
+				Transform
+				{
+					translation	-11.0 -1.6 -1.2
+					children
+					[
+						DEF	computerl Shape
+						{
+							appearance Appearance
+							{
+								material Material
+								{
+									diffuseColor 0.3 0.3 0.3
+									transparency 0.1
+								}
+							}
+							geometry Box
+							{
+								size 3.0 2.2 0.2
+							}
+						}
+					]
+				}
+				Transform
+				{
+					translation	-11.0 -1.6 -1.12
+					children
+					[
+						DEF	computers Shape
+						{
+							appearance Appearance
+							{
+								texture	ImageTexture
+						        {
+							         url "computer.jpg"
+							         
+						        }
+							}
+							geometry Box
+							{
+								size 2.8 2.0 0.1
+							}
+						}
+					]
+				}
+				DEF	tlcd TouchSensor {}
+			]
+		}
+		Transform
+		{
+			translation	-11.0 -2.8 0.0
+			children
+			[
+				DEF	computerb Shape
+				{
+					appearance Appearance
+					{
+						material Material
+						{
+							diffuseColor 0.3 0.3 0.3
+						}
+					}
+					geometry Box
+					{
+						size 3.0 0.2 2.2
+					}
+				}
+				DEF	ps PlaneSensor
+				{
+					maxPosition	1.0 0.0
+					minPosition	-1.0 0.0
+				}
+			]
+		}
+	]
+}
+
+
+
+
+DEF	pathlcd Script
+{
+	eventIn	SFTime time
+	field SFInt32 n 0
+	eventOut SFBool	k
+	eventOut SFBool	g
+	url	"javascript:
+	function time()
+	{
+		if(n==0)
+		{
+			k=TRUE;
+			g=FALSE;
+		}
+		if(n==1)
+		{
+			k=FALSE;
+			g=TRUE;
+		}
+		n=(n+1)%2
+	}"
+}
+
+DEF	clocklcdk TimeSensor
+{
+	cycleInterval 5
+	loop FALSE
+}
+
+DEF	interlckk OrientationInterpolator
+{
+	key	[0.0 1.0]
+	keyValue
+	[
+		1 0 0 1.571
+		1 0 0 0.0
+	]
+}
+DEF	clocklcdg TimeSensor
+{
+	cycleInterval 5
+	loop FALSE
+}
+
+DEF	interlcdg OrientationInterpolator
+{
+	key	[0.0 1.0]
+	keyValue
+	[
+		1 0 0 0.0
+		1 0 0 1.57
+	]
+}
+
+ROUTE tlcd.touchTime TO	pathlcd.time
+
+ROUTE tlcd.touchTime TO	clocklcdk.startTime
+ROUTE pathlcd.k	TO clocklcdk.enabled
+ROUTE clocklcdk.fraction_changed TO	interlckk.set_fraction
+ROUTE interlckk.value_changed TO rlcd.rotation
+
+ROUTE tlcd.touchTime TO	clocklcdg.startTime
+ROUTE pathlcd.g	TO clocklcdg.enabled
+ROUTE clocklcdg.fraction_changed TO	interlcdg.set_fraction
+ROUTE interlcdg.value_changed TO rlcd.rotation
+
+ROUTE ps.translation_changed TO	pc.translation

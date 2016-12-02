@@ -1,0 +1,47 @@
+#VRML V2.0 utf8
+
+Group {
+
+	
+	children [
+
+
+		Transform {
+			translation	-8.0 -2.5 0.0
+			children [
+
+
+		Shape {
+			appearance  Appearance {
+				material  Material {
+					diffuseColor  0.0 0.6 0.6 
+				}
+			}
+
+
+			
+			geometry  Box {
+			
+			 size 0.5 1.0 0.5
+			}
+		}
+
+		Sound {
+			source  AudioClip {
+				url	"music.mp3"
+				loop  TRUE
+			}
+			maxFront 60.0
+			minFront 30.0
+			maxBack	60.0
+			minBack	30.0
+		}
+
+
+	]
+}
+
+
+	]
+
+}

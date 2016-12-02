@@ -1,0 +1,398 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation	-50 17 30 
+	children [
+		Transform {
+			scale 4 4 4
+			children [
+
+DEF d1 Group {
+	children
+	[
+
+	Transform {								 #tree_a side
+   #translation	-9 10 0
+   children [
+       Transform {
+	#rotation 0 0 1 1.571
+	children[
+		Shape {
+			appearance DEF leaf Appearance {
+				material Material {}
+				texture ImageTexture{
+					url "leaf2.jpg"
+					repeatS TRUE
+					repeatT	TRUE
+				}
+			}
+			geometry Box {
+				size 3 1 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+Transform {								 
+   translation	0 1.3 0
+   children [
+       Transform {
+	#rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 0.9 0.6 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+Transform {								 
+   translation	0 0.75 0
+   children [
+       Transform {
+	#rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 2 0.8 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+Transform {								 
+   translation	0 -1.5 0
+   children [
+       Transform {
+	#rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 4 2 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+
+Transform {								 
+   translation	0 -3 0
+   children [
+       Transform {
+	#rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 3 1 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+
+Transform {								 
+   translation	0 -4 0
+   children [
+       Transform {
+	#rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 2 1 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+Transform {								 #tree_a side
+   #translation	-9 10 0
+   children [
+       Transform {
+	rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 3 1 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+Transform {								 
+   translation	0 1.3 0
+   children [
+       Transform {
+	rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 0.9 0.6 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+Transform {								 
+   translation	0 0.75 0
+   children [
+       Transform {
+	rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 2 0.8 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+Transform {								 
+   translation	0 -1.5 0
+   children [
+       Transform {
+	rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 4 2 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+
+Transform {								 
+   translation	0 -3 0
+   children [
+       Transform {
+	rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 3 1 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+
+Transform {								 
+   translation	0 -4 0
+   children [
+       Transform {
+	rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance USE leaf
+			geometry Box {
+				size 2 1 0.05
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+Transform {								 
+   translation	0 -6 0
+   children [
+       Transform {
+	#rotation 0 1 0 1.571
+	children[
+		Shape {
+			appearance DEF leaf Appearance {
+				material Material {}
+				texture ImageTexture{
+					url "wood.jpg"
+					repeatS TRUE
+					repeatT	TRUE
+				}
+			}
+			geometry Box {
+				size 0.3 4 0.3
+			}
+		}
+	]
+       }
+    ]
+}
+
+
+
+
+
+	]
+}
+
+
+
+Transform
+        {
+			translation	-10.0 0.0 0
+			children USE d1
+		}
+
+
+
+       
+Transform
+        {
+			translation	-20.0 0.0 0
+			children USE d1
+		}
+
+
+
+
+Transform
+        {
+			translation	-30.0 0.0 0
+			children USE d1
+		}
+
+
+
+
+Transform
+        {
+			translation	-40.0 0.0 0
+			children USE d1
+		}
+
+
+
+
+
+Transform
+        {
+			translation	-50.0 0.0 0
+			children USE d1
+		}
+
+
+
+
+
+Transform
+        {
+			translation	-60.0 0.0 0
+			children USE d1
+		}
+
+
+
+
+
+
+Transform
+        {
+			translation	-70.0 0.0 0
+			children USE d1
+		}
+
+
+
+ Transform
+		{
+			translation	-80.0 0.0 0
+			children USE d1
+		}
+
+ Transform
+		{
+			translation	-90.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-100.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-110.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-120.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-130.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-140.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-150.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-160.0 0.0 0
+			children USE d1
+		}
+
+Transform
+		{
+			translation	-170.0 0.0 0
+			children USE d1
+		}
+	]
+}
+
+	]
+}
